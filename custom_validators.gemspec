@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*'] + %w( README.md )
 
-  s.add_dependency 'activemodel', '3.2.22'
+  s.add_dependency 'activemodel'
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'fuubar'

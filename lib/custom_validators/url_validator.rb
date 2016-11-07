@@ -1,6 +1,8 @@
+require 'uri'
+
 module CustomValidators
   class UrlValidator < ::ActiveModel::EachValidator
-    DEFAULT_PROTOCOLS = [URI::HTTP, URI::HTTPS].freeze
+    DEFAULT_PROTOCOLS = [::URI::HTTP, ::URI::HTTPS].freeze
 
     def validate_each(record, attribute, value)
       record.errors.add(attribute, error_message) unless url_valid?(value)

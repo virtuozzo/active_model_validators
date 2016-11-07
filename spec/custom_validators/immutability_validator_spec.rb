@@ -1,4 +1,5 @@
 require 'custom_validators'
+require 'active_model'
 
 describe CustomValidators::UrlValidator do
   let(:klass) do
