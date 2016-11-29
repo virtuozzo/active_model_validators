@@ -18,7 +18,7 @@ module CustomValidators
 
     def error_message
       options.fetch(:message) do
-        I18n.t(:'activerecord.errors.messages.url', default: 'must be valid URL')
+        I18n.t('activerecord.errors.messages.url', default: 'must be valid URL')
       end
     end
   end
