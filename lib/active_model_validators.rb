@@ -1,0 +1,6 @@
+require 'active_model'
+
+require_relative 'active_model_validators/email_validator'
+require_relative 'active_model_validators/url_validator'
+require_relative 'active_model_validators/immutability_validator'
+require_relative 'active_model_validators/numeric_array_validator'

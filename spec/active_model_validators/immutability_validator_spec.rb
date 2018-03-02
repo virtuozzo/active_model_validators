@@ -1,7 +1,4 @@
-require 'custom_validators'
-require 'active_model'
-
-describe CustomValidators::UrlValidator do
+describe ActiveModelValidators::UrlValidator do
   let(:klass) do
     Class.new do
       include ::ActiveModel::Validations
@@ -14,7 +11,7 @@ describe CustomValidators::UrlValidator do
       define_attribute_methods [:custom_attribute]
 
       attr_accessor :custom_attribute
-      validates :custom_attribute, :'custom_validators/immutability' => true
+      validates :custom_attribute, :'active_model_validators/immutability' => true
     end
   end
 
@@ -33,7 +30,7 @@ describe CustomValidators::UrlValidator do
       allow(object).to receive(:new_record?).and_return false
       allow(object).to receive(:custom_attribute_changed?).and_return true
 
-      expect(subject).to be_invalid
+      expect(subject).not_to be_valid
     end
   end
 end

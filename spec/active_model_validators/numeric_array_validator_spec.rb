@@ -1,7 +1,4 @@
-require 'custom_validators'
-require 'active_model'
-
-describe CustomValidators::NumericArrayValidator do
+describe ActiveModelValidators::NumericArrayValidator do
   # coz: array.wrap - array()
   let(:validator) { described_class.new({attributes: [{}]}) }
   let(:error) { 'Should be an array of integers' }
@@ -29,7 +26,7 @@ describe CustomValidators::NumericArrayValidator do
     end
 
     def record_errors(array)
-      validator.validate_each(record, "array", array)
+      validator.validate_each(record, 'array', array)
       record.errors[:array]
     end
   end

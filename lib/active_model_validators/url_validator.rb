@@ -1,6 +1,6 @@
 require 'uri'
 
-module CustomValidators
+module ActiveModelValidators
   class UrlValidator < ::ActiveModel::EachValidator
     DEFAULT_PROTOCOLS = [::URI::HTTP, ::URI::HTTPS].freeze
 

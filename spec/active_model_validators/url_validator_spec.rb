@@ -1,8 +1,6 @@
-require 'custom_validators'
-
-describe CustomValidators::UrlValidator do
+describe ActiveModelValidators::UrlValidator do
   let(:message) { 'must be valid URL' }
-  let(:custom_message) { 'custom message'}
+  let(:custom_message) { 'custom message' }
   let(:attribute) { 'invalid_url' }
   let(:custom_attribute) { 'invalid_url' }
   let(:klass) do
@@ -10,14 +8,15 @@ describe CustomValidators::UrlValidator do
       include ::ActiveModel::Validations
 
       attr_accessor :attribute
-      validates :attribute, :'custom_validators/url' => true
+      validates :attribute, :'active_model_validators/url' => true
 
       attr_accessor :custom_attribute
       validates :custom_attribute,
-                :'custom_validators/url' => {
-                                               message: 'custom message',
-                                               protocols: [URI::HTTP, URI::FTP]
-                                            },
+                :'active_model_validators/url' =>
+                  {
+                    message: 'custom message',
+                    protocols: [URI::HTTP, URI::FTP]
+                  },
                 allow_blank: true
     end
   end
@@ -43,7 +42,7 @@ describe CustomValidators::UrlValidator do
 
     context 'defaults' do
       %w(http https).each do |type|
-        context "#{type}" do
+        context type do
           let(:attribute) { "#{type}://valid.com/" }
 
           it { is_expected.to be_valid }
@@ -53,7 +52,7 @@ describe CustomValidators::UrlValidator do
 
     context 'custom protocol' do
       %w(http ftp).each do |type|
-        context "#{type}" do
+        context type do
           let(:custom_attribute) { "#{type}://valid.com/" }
 
           it { is_expected.to be_valid }
