@@ -1,3 +1,5 @@
+require 'active_model_validators'
+
 describe ActiveModelValidators::UrlValidator do
   let(:klass) do
     Class.new do

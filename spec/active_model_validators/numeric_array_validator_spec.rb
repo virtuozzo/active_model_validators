@@ -1,3 +1,5 @@
+require 'active_model_validators'
+
 describe ActiveModelValidators::NumericArrayValidator do
   # coz: array.wrap - array()
   let(:validator) { described_class.new({attributes: [{}]}) }
