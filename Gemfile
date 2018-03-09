@@ -4,5 +4,9 @@ gemspec
 gem 'activemodel', '4.2.7'
 
 group :development do
- gem 'rake'
+  gem 'rake'
+end
+
+group :test do
+  gem 'rspec'
 end
