@@ -33,7 +33,7 @@ class Model < ActiveRecord::Base
   # my_model_instance.my_immutable_attribute = 'bar'
   # my_model_instance.valid? # => false
 
-  validates :my_atribute_with_array, :'active_model_validators/numeric_array' => true
+  validates :my_attribute_with_array, :'active_model_validators/numeric_array' => true
   # my_model_instance = MyModel.create(my_attribute_with_array: [1,2,3])
   # my_model_instance.valid? # => true
   # my_model_instance.my_attribute_with_array = 'I am not an array'
