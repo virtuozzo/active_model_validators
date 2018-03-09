@@ -39,7 +39,10 @@ class Model < ActiveRecord::Base
   # my_model_instance.my_attribute_with_array = 'I am not an array'
   # my_model_instance.valid? # => false
 
-  validates :my_url_attribue, :'active_model_validators/url' => true, protocols: [custom_protocols]
+  validates :my_url_attribue, :'active_model_validators/url' => true
+  # by default it works with +http+ and +https+
+  # It can be easily extended with +protocols+ param
+  # :'active_model_validators/url' => { protocols: [URI::HTTP, URI::HTTPS, URI::FTP] }
   # valid_url = 'https://www.valid.com'
   # my_model_instance = MyModel.create(my_url_attribue: valid_url)
   # my_model_instance.valid? # => true

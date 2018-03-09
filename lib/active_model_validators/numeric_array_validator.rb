@@ -3,7 +3,7 @@ module ActiveModelValidators #:nodoc:
   # == Validator of numerical array
   class NumericArrayValidator < ActiveModel::EachValidator
 
-    # Adds error if there an attempt to change an immutable attribute
+    # Adds error if there an attribute with not a numerical array provided
     #
     # * +record+ - ActiveRecord model
     # * +attr+   - model attribute to store an array

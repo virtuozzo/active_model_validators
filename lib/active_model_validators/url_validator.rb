@@ -8,15 +8,26 @@ module ActiveModelValidators #:nodoc:
     #    DEFAULT_PROTOCOLS = [::URI::HTTP, ::URI::HTTPS]
     DEFAULT_PROTOCOLS = [::URI::HTTP, ::URI::HTTPS].freeze
 
-    # Adds error if there an attempt to change an immutable attribute
+    # Adds error if there is invalid URL address.
+    #
+    # By default it works with +http+ and +https+.
+    #
+    # It can be easily extended with protocols param
     #
     # * +record+ - ActiveRecord model
     # * +attr+   - model attribute to store an URL
     # * +value+  - value, supposed to be a valid URL-adress
     #
     # ==== Example
+    #
     #   class MyModel < ActiveRecord::Base
-    #     validates :my_url, :'active_model_validators/url' => true, protocols: [custom_protocols]
+    #     # default usage
+    #     validates :my_url, :'active_model_validators/url' => true
+    #   end
+    #
+    #   class MyModel < ActiveRecord::Base
+    #     # with custom URL protocols
+    #     validates :my_url, :'active_model_validators/url' => { protocols: [URI::HTTP, URI::HTTPS, URI::FTP] }
     #   end
     #
     #   valid_url = 'https://www.valid.com'
