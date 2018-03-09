@@ -1,0 +1,7 @@
+Tue, 06 Mar 2018 15:48:44 +0200
+lib/active_model_validators.rb	Fri, 02 Mar 2018 16:23:46 +0200
+lib/active_model_validators/url_validator.rb	Mon, 05 Mar 2018 16:27:18 +0200
+lib/active_model_validators/numeric_array_validator.rb	Mon, 05 Mar 2018 16:17:02 +0200
+lib/active_model_validators/email_validator.rb	Fri, 02 Mar 2018 16:42:24 +0200
+lib/active_model_validators/version.rb	Fri, 02 Mar 2018 16:29:32 +0200
+lib/active_model_validators/immutability_validator.rb	Mon, 05 Mar 2018 16:17:07 +0200
