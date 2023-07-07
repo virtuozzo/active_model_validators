@@ -1,10 +1,8 @@
 <!-- [gem]: [TODO] -->
-[travis]: https://travis-ci.org/OnApp/active_model_validators
 
 # ActiveModelValidators
 
 <!-- [![Gem Version](TODO)][gem] -->
-[![Build Status](https://travis-ci.org/OnApp/active_model_validators.svg?branch=master)][travis]
 
 ### Installation
 Add the following code to your `Gemfile`
